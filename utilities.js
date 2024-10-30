@@ -35,8 +35,7 @@ export function createElement(elementType, options = {}) {
         };
 
         if (key === 'style') {
-            const arr = []
-            let holder = ''
+            let holder = '';
             Object.entries(value).forEach(([styleKey, styleValue]) => {
                 holder += `${styleKey}: ${styleValue}; `
             });
@@ -117,13 +116,13 @@ export function addGlobalEventListener(type, selector, callbackfn, options, pare
                         selector.forEach(item => {
                             if (typeof (item) === 'string') {
                                 //@ts-ignore
-                                if (e.target?.matches(item)) callbackfn(e, e.target.matches(item) ? e.target : false, item, typeArr);
+                                if (e.target?.matches(item)) callbackfn(e, e.target?.matches(item) ? e.target : false, item, typeArr);
                             };
                         });
                     };
                     if (typeof (selector) === 'string') {
                         //@ts-ignore
-                        if (e.target?.matches(selector)) callbackfn(e, e.target.matches(selector) ? e.target : false, selector, typeArr);
+                        if (e.target?.matches(selector)) callbackfn(e, e.target?.matches(selector) ? e.target : false, selector, typeArr);
                     };
                 }, options);
             };
@@ -134,13 +133,13 @@ export function addGlobalEventListener(type, selector, callbackfn, options, pare
                 selector.forEach(item => {
                     if (typeof (item) === 'string') {
                         //@ts-ignore
-                        if (e.target?.matches(item)) callbackfn(e, e.target.matches(item) ? e.target : false, item, type);
+                        if (e.target?.matches(item)) callbackfn(e, e.target?.matches(item) ? e.target : false, item, type);
                     };
                 });
             };
             if (typeof (selector) === 'string') {
                 //@ts-ignore
-                if (e.target?.matches(selector)) callbackfn(e, e.target.matches(selector) ? e.target : false, selector, type);
+                if (e.target?.matches(selector)) callbackfn(e, e.target?.matches(selector) ? e.target : false, selector, type);
             };
         }, options);
     };

@@ -1,21 +1,34 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+        integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+        crossorigin="anonymous" referrerpolicy="no-referrer" />
     <title>Movie App</title>
     <script src="app.js" defer type=module></script>
 </head>
+
 <body>
-    <header>
-        <form id="form">
-            <input type="text" placeholder="Search" id="search" class="search">
-        </form>
-    </header>
-    <main id="main">
+    <div id="all-parent" class="blur">
+        <header>
+            <h2>MOVIE MANIA</h2>
+            <div class="button-container">
+                <button id="movies" class="toggle-btn" data-movies>Movies</button>
+                <div class="btn"></div>
+                <button id="tv" class="toggle-btn" data-tv>TV</button>
+            </div>
+            <form id="form">
+                <input type="text" placeholder="Search" id="search" class="search">
+            </form>
+        </header>
+        <main id="main" data-main>
             <div class="movie-card">
-                <img src="https://images.unsplash.com/photo-1728853487293-1a4c5c39b393?q=80&w=984&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D" alt="Image">
+                <img src="https://images.unsplash.com/photo-1728853487293-1a4c5c39b393?q=80&w=984&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                    alt="Image" class="dp">
                 <div class="movie-info">
                     <h2>Movie Title</h2>
                     <span class="green">10.0</span>
@@ -25,15 +38,91 @@
                         <h3>Overview</h3>
                         <h4 class="language">en-us</h4>
                     </div>
-                    <p>
-                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Soluta laudantium, eum ducimus qui omnis fuga ex. Eos ipsam similique suscipit officia corporis architecto, quo in, porro ab assumenda debitis obcaecati quis deserunt eveniet fugiat rem consequatur. Aut, exercitationem? Quo cum praesentium architecto dicta accusamus debitis mollitia cumque, voluptas consectetur, soluta ex et aliquam consequuntur, ipsam vitae quae perspiciatis cupiditate sed atque recusandae deleniti! Optio exercitationem error fugit ducimus quaerat, reiciendis vitae aliquam tempore reprehenderit cum nihil porro dolorum perspiciatis dolorem modi consequatur eaque veniam architecto voluptatem ratione debitis possimus atque. Debitis, eius commodi. Odit ut reiciendis harum repudiandae repellendus! Ad, enim? Nemo voluptates consequuntur modi, iste velit tempore suscipit iusto et, esse ex repellendus aperiam dolorum. Animi et omnis hic eos maiores quo! Omnis maiores libero accusantium eum dolores unde nam ipsa, in minus delectus praesentium ut quibusdam quisquam cum impedit, explicabo facilis, alias inventore recusandae aperiam laboriosam! Iusto, perspiciatis.
+                    <p class="description">
+                        <!-- Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate non possimus maxime maiores
+                        obcaecati, deleniti nulla quae quo, nisi ea recusandae corrupti! Ullam doloremque perferendis
+                        sequi
+                        dolor modi dolorem non, dolorum asperiores quaerat natus reprehenderit eligendi eveniet animi
+                        dignissimos hic cum ipsam? Ut rerum nam optio iure? Accusamus delectus nam earum ex nulla
+                        adipisci
+                        aliquam. Harum nisi impedit numquam odio ullam tenetur autem nam voluptatum doloremque quaerat
+                        nesciunt
+                        dolore dolor, enim rerum officia nihil! Illum necessitatibus fuga tempora officiis suscipit
+                        voluptatem
+                        corrupti enim distinctio dolorem, possimus esse culpa sit quas pariatur cumque voluptates
+                        ratione maxime
+                        nesciunt ab asperiores unde? Unde. -->
                     </p>
                     <div class="release-date">
-                        <h4>Release date: </h4> 
+                        <h4>Release date: </h4>
                         <p>date</p>
                     </div>
                 </div>
             </div>
         </main>
+        <footer id="footer">
+            <div class="pages-scroll">
+                <span class="fa span-arrow-left">
+                    <i class="fa-solid fa-chevron-left"></i>
+                </span>
+                <div class="circles-container">
+                    <div class="circle"></div>
+                    <div class="circle"></div>
+                    <div class="circle"></div>
+                    <div class="circle"></div>
+                    <div class="circle"></div>
+                    <div class="circle"></div>
+                </div>
+                <span class="fa span-arrow-right">
+                    <i class="fa-solid fa-chevron-right"></i>
+                </span>
+            </div>
+        </footer>
+    </div>
+
+    <section data-section>
+        <div class="popup">
+            <div class="img-container">
+                <div class="movie-info">
+                    <h2>Movie Title</h2>
+                    <span class="green" id="rating">10.0</span>
+                </div>
+                <div class="image">
+                    <img src="https://images.unsplash.com/photo-1728853487293-1a4c5c39b393?q=80&w=984&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
+                        alt="Image" class="dp">
+                </div>
+                <button>Add to Watchlist <strong>+</strong></button>
+            </div>
+            <div class="overview-section">
+                <div class="overview-and-language">
+                    <h3>Overview</h3>
+                    <h4 class="language">en-us</h4>
+                </div>
+                <p class="description">
+                    Lorem ipsum dolor sit amet consectetur adipisicing elit. Voluptate non possimus maxime maiores
+                    obcaecati, deleniti nulla quae quo, nisi ea recusandae corrupti! Ullam doloremque perferendis sequi
+                    dolor modi dolorem non, dolorum asperiores quaerat natus reprehenderit eligendi eveniet animi
+                    dignissimos hic cum ipsam? Ut rerum nam optio iure? Accusamus delectus nam earum ex nulla adipisci
+                    aliquam. Harum nisi impedit numquam odio ullam tenetur autem nam voluptatum doloremque quaerat
+                    nesciunt
+                    dolore dolor, enim rerum officia nihil! Illum necessitatibus fuga tempora officiis suscipit
+                    voluptatem
+                    corrupti enim distinctio dolorem, possimus esse culpa sit quas pariatur cumque voluptates ratione
+                    maxime
+                    nesciunt ab asperiores unde? Unde.
+                </p>
+                <div class="release-date">
+                    <h4>Release date: </h4>
+                    <p>date</p>
+                </div>
+                <div class="genre">
+                    <p class="genre-text">Horro</p>
+                    <p class="genre-text">Comedy</p>
+                    <p class="genre-text">Drama</p>
+                </div>
+            </div>
+        </div>
+    </section>
 </body>
+
 </html>
